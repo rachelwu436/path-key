@@ -6,6 +6,6 @@ export default defineConfig({
     base: "/",
     server: {
         strictPort: true,  // looking at Capitalise, it kept the port the same - kill any processes using the port if the server fails to start.
-        port: 8080
-    }
+        port: 8080,
+    },
 });
