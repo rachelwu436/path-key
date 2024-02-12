@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
+import { useNavigate, Link } from "react-router-dom";
+
 import { 
     Box, 
     useTheme, 
@@ -13,6 +16,7 @@ import {
     Paper,
     Container,
     Backdrop,
+    Button,
 } from "@mui/material";
 
 import SelectionMenu from "../components/selectionMenu";
@@ -37,6 +41,13 @@ function Homepage() {
     //    fetchCrops();
     //}, []);
 
+    const navigate = useNavigate();
+
+    // function to change from homepage to questionpage to start the questionaire
+    const goQuestionPage = () => {
+        navigate("/QuestionPage");
+    };
+
     // setup what the Homepage will look like
     return (
         <Box>
@@ -58,6 +69,14 @@ function Homepage() {
                         Select your crop from below
                 </Typography>
                 <SelectionMenu />
+
+                {/* the next button will change the route to go to the Questionpage */ }
+                <Button variant="contained" 
+                    onClick={goQuestionPage} 
+                    sx = {{ ml: 10, mt: 2 }}>
+                    Next
+                </Button>
+
             </Container>
         </Box>
     )

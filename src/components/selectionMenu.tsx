@@ -28,12 +28,9 @@ function SelectionMenu() {
     
     // Navigation functionality to go to the quiz page (will re-render questions on same page based off of answers)
     const navigate = useNavigate();
-    const goToPage = (pageName: any) => {
-        navigate("/" + pageName);
-    };
+   
 
-    return (
-            
+    return (         
         <Box flex={1} sx={{ m: 5, pl: 5}}>
             <Box 
                 display="grid"

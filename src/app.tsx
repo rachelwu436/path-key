@@ -20,6 +20,7 @@ import customTheme1 from "./themes/custom1";
 
 // import routes
 import Homepage from "./routes/Homepage";
+import QuestionPage from "./routes/QuestionPage";
 
 import './App.css';
 
@@ -33,6 +34,7 @@ function App() {
             <Routes>
             {/* Define my homepage route here */}
               <Route path="/" element={<Homepage />} />
+              <Route path="/QuestionPage" element={<QuestionPage />} />
             </Routes>
           </Box>
         </CssBaseline>
