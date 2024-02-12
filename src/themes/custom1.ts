@@ -17,14 +17,23 @@ const theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#00e676",
+            main: "#679985",
+        },
+        background: {
+            default: "#f1f1f1",
         },
     },
     typography: {
         h2: {
-            fontSize: "5rem"
+            fontSize: "5rem",
+        },
+        h3: {
+            fontWeight: "light",
+
         }
+
     }
+    
 });
 
 export default theme;

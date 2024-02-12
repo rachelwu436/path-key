@@ -11,6 +11,8 @@ import {
     TableBody,
     TableCell,
     Paper,
+    Container,
+    Backdrop,
 } from "@mui/material";
 
 import SelectionMenu from "../components/selectionMenu";
@@ -37,16 +39,26 @@ function Homepage() {
 
     // setup what the Homepage will look like
     return (
-        <Box mt="8vh">
-            <Paper>
-                <Typography variant="h2" sx={{ m: 5, p: 5 }}>
+        <Box>
+            <Container color="primary">
+                <Box component="img" sx={{
+                    height: 200,
+                    width: 1000,
+                    maxHeight: { xs: 233, md: 167 },
+                    maxWidth: { xs: 1000, md: 1000 },
+                }}
+                alt="PathKey background elements"
+                src="/src/assets/pathkey_background_decor.png"
+                />
+
+                <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 10, fontWeight: "light" }}>
                     Welcome to PathKey!
                 </Typography>
-                <Typography variant="h5" gutterBottom sx={{ m: 5, p: 5 }}>
+                <Typography variant="h5" sx={{ pl: 10, fontWeight: "light" }}>
                         Select your crop from below
                 </Typography>
                 <SelectionMenu />
-            </Paper>
+            </Container>
         </Box>
     )
 

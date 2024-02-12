@@ -26,18 +26,19 @@ import './App.css';
 
 function App() {
   return (
-    <CssBaseline>
-      <BrowserRouter>
-          <ThemeProvider theme={customTheme1}>
-            <Box>
-              <Routes>
-                {/* Define my homepage route here */}
-                <Route path="/" element={<Homepage />} />
-              </Routes>
-            </Box>
-          </ThemeProvider>
-      </BrowserRouter>
-    </CssBaseline>
+    <BrowserRouter>
+      <ThemeProvider theme={customTheme1}>
+        <CssBaseline>
+          <Box>
+            <Routes>
+            {/* Define my homepage route here */}
+              <Route path="/" element={<Homepage />} />
+            </Routes>
+          </Box>
+        </CssBaseline>
+      </ThemeProvider>
+    </BrowserRouter>
+    
   );
 }
 

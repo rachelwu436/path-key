@@ -34,18 +34,18 @@ function SelectionMenu() {
 
     return (
             
-        <Box flex={1} sx={{ m: 5, p: 5 }}>
+        <Box flex={1} sx={{ m: 5, pl: 5}}>
             <Box 
                 display="grid"
                 gridTemplateColumns="repeat(auto-fill, 320px)"
-                flexDirection="row"
+                flexDirection="column"
                 flexWrap="wrap"
-                gap="50px"
+                gap="30px"
             >
                 <Card
                 sx={{ 
-                    maxWidth: 320, 
-                    minWidth: 320, 
+                    maxWidth: 300, 
+                    minWidth: 280, 
                     border: "none", 
                     ":hover": { 
                         boxShadow: 10, 
@@ -54,7 +54,7 @@ function SelectionMenu() {
                 >
                     <CardActions>
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6">
                             Lettuce
                         </Typography>
                     </CardContent>
@@ -62,8 +62,8 @@ function SelectionMenu() {
                 </Card>
                 <Card
                 sx={{ 
-                    maxWidth: 320, 
-                    minWidth: 320, 
+                    maxWidth: 300, 
+                    minWidth: 280, 
                     border: "none", 
                     ":hover": { 
                         boxShadow: 10, 
@@ -72,7 +72,7 @@ function SelectionMenu() {
                 >
                     <CardActions>
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6">
                             Kiwifruit
                         </Typography>
                     </CardContent>
@@ -80,8 +80,8 @@ function SelectionMenu() {
                 </Card>
                 <Card
                 sx={{ 
-                    maxWidth: 320, 
-                    minWidth: 320, 
+                    maxWidth: 300, 
+                    minWidth: 280, 
                     border: "none", 
                     ":hover": { 
                         boxShadow: 10, 
@@ -90,12 +90,13 @@ function SelectionMenu() {
                 >
                     <CardActions>
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6">
                             Apple
                         </Typography>
                     </CardContent>
                     </CardActions>
                 </Card>
+                
             </Box>
         </Box>
 
