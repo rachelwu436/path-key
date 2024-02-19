@@ -16,10 +16,11 @@ import {
     TextField,
 } from "@mui/material";
 
+import { useParams } from "react-router-dom";
+
 import SelectionMenu from "../components/selectionMenu";
 
 import { TCropOptions } from "../models/TCropOptions";
-
 
 // the QuestionPage is going to conditionally render each time the "Next" button is pressed.
 // depending on the answers each time the page is rendered, new questions will be displayed.
@@ -27,9 +28,18 @@ import { TCropOptions } from "../models/TCropOptions";
 // so we will need to keep track of several variables and call several functions to check for disease identification.
 function QuestionPage() {
     const theme = useTheme();
+    
+    // useful for passing in ids to grab data to display.
+    const params = useParams();
 
     // store what the heading for the page should be, this will change depending on the questionaire state
     const [heading, setHeading] = useState("Let's get started");
+
+    const [selectData, setSelectData] = useState([]);
+
+    // function to fetch
+
+    
    
     // setup what the QuestionPage will look like
     return (
