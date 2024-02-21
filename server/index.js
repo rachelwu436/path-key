@@ -1,5 +1,9 @@
 const express = require('express')
+
+// we need cors so that we can access our server from different domains.
 const cors = require('cors')
+
+// bodyParser is mainly used for form posts, we explore it here so we don't have issues later.
 const bodyParser = require('body-parser')
 
 const router = require('./routes/router')

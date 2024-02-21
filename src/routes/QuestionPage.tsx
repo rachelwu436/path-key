@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import SelectionMenu from "../components/selectionMenu";
 
@@ -37,9 +38,26 @@ function QuestionPage() {
 
     const [selectData, setSelectData] = useState([]);
 
-    // function to fetch
+    // we need to do some additional overhead since useEffect fetches data twice.
+    // by using the extra "processing" variable, we make sure we are only fetching once.
+    useEffect( ()=> {
+        let processing = true
+        axiosFetchData(processing)
+        return () => {
+            processing = false
+        }
+    }, [])
 
-    
+    // function to fetch
+   const axiosFetchData = async(processing) => {
+    await axios.get("http://localhost:4000/diseases")
+    .then(res => {
+        if (processing) {
+            setSelectData(res.data)
+        }
+    })
+    .catch(err => console.log(err))
+   }
    
     // setup what the QuestionPage will look like
     return (
@@ -62,7 +80,7 @@ function QuestionPage() {
                 <Typography variant="h5" sx={{ pl: 10, fontWeight: "light" }}>
                         Select your crop from below
                 </Typography>
-                <SelectionMenu />
+                
             </Container>
         </Box>
     )

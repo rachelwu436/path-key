@@ -58,8 +58,8 @@ router.get('/diseases', (req, res) => {
     res.send(diseaseData)
 })
 
-router.get('/questions', (req, res) => {
-    const questionData = 
+router.get('/crops', (req, res) => {
+    const cropData = 
     [
         {
             "name": "Lettuce",
@@ -152,7 +152,7 @@ router.get('/questions', (req, res) => {
         }
 
     ]
-    res.send(questionData)
+    res.send(cropData)
 })
 
 module.exports = router
