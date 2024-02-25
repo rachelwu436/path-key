@@ -30,18 +30,13 @@ import { TCrop } from "../models/TCrop";
 // we will make an API call to retrieve all the crops that are available for the quiz.
 
 // need to create a type interface so when we pass in JSON data, we can assign it a type
-interface props {
-    crops: TCrop[];
-}
 
-function Homepage({
-    crops,
-}: props) {
+
+function Homepage() {
     const theme = useTheme();
     const navigate = useNavigate();
-    //const [selectData, setSelectData] = useState([]);
+    
     const [selectValue, setSelectValue] = useState('')
-
     const [cropOptions, setCropOptions] = useState<TCrop[]>([]);
 
     useEffect( () => {
@@ -102,7 +97,8 @@ function Homepage({
                 <Typography variant="h5" sx={{ pl: 10, fontWeight: "light" }}>
                         Select your crop from below
                 </Typography>
-                <SelectDropdown />
+                
+                <SelectionMenu prompts={cropOptions} />
 
                 {/* the next button will change the route to go to the Questionpage */ }
                 <Button variant="contained" 

@@ -23,23 +23,27 @@ import Homepage from "./routes/Homepage";
 import QuestionPage from "./routes/QuestionPage";
 
 import './App.css';
+import { SelectedOptionsProvider } from './optionsContext';
 
+// import global state manager
 
 function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={customTheme1}>
-        <CssBaseline>
-          <Box>
-            <Routes>
-            {/* Define my homepage route here */}
-              <Route path="/" element={<Homepage />} />
-              <Route path="/QuestionPage" element={<QuestionPage />} />
-            </Routes>
-          </Box>
-        </CssBaseline>
-      </ThemeProvider>
-    </BrowserRouter>
+    <SelectedOptionsProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={customTheme1}>
+          <CssBaseline>
+            <Box>
+              <Routes>
+              {/* Define my homepage route here */}
+                <Route path="/" element={<Homepage />} />
+                <Route path="/QuestionPage" element={<QuestionPage />} />
+              </Routes>
+            </Box>
+          </CssBaseline>
+        </ThemeProvider>
+      </BrowserRouter>
+    </SelectedOptionsProvider>
     
   );
 }
