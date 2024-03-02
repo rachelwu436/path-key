@@ -1,30 +1,44 @@
 import * as React from "react";
 import { 
     Box, 
+    Button, 
+    Divider, 
+    ListItemIcon, 
+    Menu, 
+    Container, 
+    MenuItem, 
+    styled, 
     Card,
     CardContent,
+    CardMedia,
     CardActionArea,
     Typography,
-} from "@mui/material";
+    Toolbar,
+    Fade } 
+from "@mui/material";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-// this general selection menu will only be taking in strings.
-// the strings are passed in from different levels of the TCrop object.
+import { TCrop } from "../models/TCrop";
+import { useQuizContext } from "../contexts/quizContext";
+
+// we are passing in all the crops from the get all crops API.
 interface Props {
-    options: String[];
+    crops: TCrop[];
 }
 
 const SelectionMenu = ({
-    options,
+    crops,
 }: Props) => {
+  
+    // we will need to set the current crop to the quiz context.
+    const { currentCrop, setCurrentCrop } = useQuizContext();
 
-    // Navigation functionality to go to the quiz page (will re-render questions on same page based off of answers)
-    const navigate = useNavigate();
-         
-    const handleCardClick = (option: String) => {
-        console.log("Testing click:", option);
+    // will need to add the selectedCrop to a context where the TCrop object can be accessed throughout the questionaire.
+    const handleCardClick = (selectedCrop: TCrop) => {
+        console.log("Testing click:", selectedCrop.name);
+        setCurrentCrop(selectedCrop);
     };
 
     return ( 
@@ -36,8 +50,8 @@ const SelectionMenu = ({
                 flexWrap="wrap"
                 gap="30px"
             >
-                {options?.map((option) => (
-                    <Box>
+                {crops?.map((crop) => (
+                    <Box key={crop.name}>
                         <Card
                         sx={{ 
                             maxWidth: 300, 
@@ -49,11 +63,11 @@ const SelectionMenu = ({
                             }}
                         >
                             <CardActionArea
-                                onClick={() => handleCardClick(option)}
+                                onClick={() => handleCardClick(crop)}
                             >
                                 <CardContent>
                                     <Typography variant="h6">
-                                        {option}
+                                        {crop.name}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

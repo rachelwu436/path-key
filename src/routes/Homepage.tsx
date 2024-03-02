@@ -22,6 +22,7 @@ import {
 import axios from "axios";
 
 import SelectionMenu from "../components/selectionMenu";
+import HomeMenu from "../components/homeMenu";
 
 import { TCrop } from "../models/TCrop";
 // import { getCropOptions } from "../api/getCropOptions";
@@ -31,7 +32,6 @@ import { TCrop } from "../models/TCrop";
 
 // need to create a type interface so when we pass in JSON data, we can assign it a type
 
-
 function Homepage() {
     const theme = useTheme();
     const navigate = useNavigate();
@@ -39,10 +39,10 @@ function Homepage() {
     const [selectValue, setSelectValue] = useState('')
     const [cropOptions, setCropOptions] = useState<TCrop[]>([]);
 
+    // when HomePage loads, we grab all the crop objects.
     useEffect( () => {
         let processing = true
         axiosFetchData(processing)
-        console.log("crops:", cropOptions)
         return () => {
             processing = false
         }
@@ -57,20 +57,7 @@ function Homepage() {
             }
         })
         .catch(err => console.log(err))
-    }
-
-    const SelectDropdown = () => {
-        return (
-            <select value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
-                <option value="" key="none"> -- Select One -- </option>
-                {
-                    cropOptions?.map( (item) => (
-                        <option value={item.name} key={item.name}>{item.name}</option>
-                    ))
-                }
-            </select>
-        )
-    }    
+    }  
 
     // function to change from homepage to questionpage to start the questionaire
     const goQuestionPage = () => {
@@ -98,7 +85,7 @@ function Homepage() {
                         Select your crop from below
                 </Typography>
                 
-                <SelectionMenu prompts={cropOptions} />
+                <HomeMenu crops={cropOptions} />
 
                 {/* the next button will change the route to go to the Questionpage */ }
                 <Button variant="contained" 

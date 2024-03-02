@@ -23,13 +23,13 @@ import Homepage from "./routes/Homepage";
 import QuestionPage from "./routes/QuestionPage";
 
 import './App.css';
-import { SelectedOptionsProvider } from './optionsContext';
 
 // import global state manager
+import { QuizProvider } from "./contexts/quizContext";
 
 function App() {
   return (
-    <SelectedOptionsProvider>
+    <QuizProvider>
       <BrowserRouter>
         <ThemeProvider theme={customTheme1}>
           <CssBaseline>
@@ -43,7 +43,7 @@ function App() {
           </CssBaseline>
         </ThemeProvider>
       </BrowserRouter>
-    </SelectedOptionsProvider>
+   </QuizProvider>
     
   );
 }
