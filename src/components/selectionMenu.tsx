@@ -1,3 +1,5 @@
+// selection menu component just takes in array of strings to display.
+
 import * as React from "react";
 import { 
     Box, 
@@ -9,6 +11,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useQuizContext} from "../contexts/quizContext";
 
 // this general selection menu will only be taking in strings.
 // the strings are passed in from different levels of the TCrop object.
@@ -19,12 +22,19 @@ interface Props {
 const SelectionMenu = ({
     options,
 }: Props) => {
+     
+    // when an answer is selected, we add it to the answers array in the quizContext
+    const { answers, setAnswers } = useQuizContext();
 
-    // Navigation functionality to go to the quiz page (will re-render questions on same page based off of answers)
-    const navigate = useNavigate();
-         
-    const handleCardClick = (option: String) => {
+    const handleCardClick = (option: String, key: number) => {
         console.log("Testing click:", option);
+        
+        // we should then add the index of the option clicked to the quizContext.
+        console.log("Testing index of option selected:", key);
+        setAnswers((answers) => [...answers, key]);
+
+        // answers are beibg saved. yay!
+        console.log(answers);
     };
 
     return ( 
@@ -36,8 +46,9 @@ const SelectionMenu = ({
                 flexWrap="wrap"
                 gap="30px"
             >
-                {options?.map((option) => (
-                    <Box>
+                {/* we pass in the "key" prop which is actually the index of the array item */}
+                {options?.map((option, key) => (
+                    <Box key={key}>
                         <Card
                         sx={{ 
                             maxWidth: 300, 
@@ -49,7 +60,7 @@ const SelectionMenu = ({
                             }}
                         >
                             <CardActionArea
-                                onClick={() => handleCardClick(option)}
+                                onClick={() => handleCardClick(option, key)}
                             >
                                 <CardContent>
                                     <Typography variant="h6">

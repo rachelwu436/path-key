@@ -1,6 +1,6 @@
 import { TSubpart } from "./TSubpart";
 
 export type TPlantPart = {
-    name: string;
+    part: string;
     subParts: TSubpart[];
 }

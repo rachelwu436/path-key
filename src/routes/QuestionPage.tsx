@@ -15,14 +15,19 @@ import { useQuizContext} from "../contexts/quizContext";
 function QuestionPage() {
     
     // store what the heading for the page should be, this will change depending on the questionaire state
-    const [heading, setHeading] = useState("Let's get started");
+    // const [heading, setHeading] = useState("Let's get started");
 
     // we can grab the current selected crop from the quizContext
     const { currentCrop, setCurrentCrop } = useQuizContext();
 
+    const { quizProgress, setQuizProgress } = useQuizContext();
+
     useEffect(() => {
         // check if the selected crop is right
         console.log("Selected crop:", currentCrop);
+
+        // check if quiz progress is right
+        console.log("Checking quiz progress:", quizProgress);
     }, [currentCrop]);
    
     // setup what the QuestionPage will look like
@@ -40,13 +45,13 @@ function QuestionPage() {
                 />
 
                 <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 10, fontWeight: "light" }}>
-                    {heading}
+                    {currentCrop.name}
                 </Typography>
                     
                 <Typography variant="h5" sx={{ pl: 10, fontWeight: "light" }}>
-                        {currentCrop.name}
+                        Select from below:
                 </Typography>
-                <Questionaire crop={currentCrop}/>
+                <Questionaire />
             </Container>
         </Box>
     )

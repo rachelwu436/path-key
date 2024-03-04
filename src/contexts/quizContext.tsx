@@ -12,8 +12,8 @@ interface QuizContextProps {
     quizProgress: number;
     setQuizProgress: React.Dispatch<React.SetStateAction<number>>;
 
-    answers: string[];
-    setAnswers: React.Dispatch<React.SetStateAction<string[]>>;
+    answers: number[];
+    setAnswers: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
 const QuizContext = createContext<QuizContextProps | undefined>(undefined);
@@ -23,7 +23,7 @@ interface QuizProviderProps {
 }
 
 const QuizProvider: React.FC<QuizProviderProps> = ({ children }) => {
-    const [answers, setAnswers] = useState<string[]>([]);
+    const [answers, setAnswers] = useState<number[]>([]);
     const [currentCrop, setCurrentCrop] = useState<TCrop>({} as TCrop);
     
     // quiz progress starts as 0 then changes as we access deeper levels of the TCrop object.

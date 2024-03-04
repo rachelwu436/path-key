@@ -35,10 +35,15 @@ const SelectionMenu = ({
     // we will need to set the current crop to the quiz context.
     const { currentCrop, setCurrentCrop } = useQuizContext();
 
+    const { quizProgress, setQuizProgress } = useQuizContext();
+
     // will need to add the selectedCrop to a context where the TCrop object can be accessed throughout the questionaire.
     const handleCardClick = (selectedCrop: TCrop) => {
         console.log("Testing click:", selectedCrop.name);
         setCurrentCrop(selectedCrop);
+
+        // when we select the crop from homepage, update quiz progress to show quiz has started.
+        setQuizProgress(1);
     };
 
     return ( 
