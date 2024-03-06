@@ -30,6 +30,25 @@ const SelectionMenu = ({
     // increment quiz progress when next button is clicked.
     const { quizProgress, setQuizProgress } = useQuizContext();
 
+    // prompt should change depending on quiz stage.
+    const [ prompt, setPrompt ] = useState("Select from below:");
+
+    useEffect(() => {
+        togglePrompt(quizProgress);
+    }, [quizProgress]);
+
+    const togglePrompt = ( quizProgress: number ) => {
+        if ( quizProgress == 1 ) {
+            setPrompt("Select plant part");
+        }
+        if ( quizProgress == 2 ) {
+            setPrompt("Select sub part");
+        }
+        if ( quizProgress == 3 ) {
+            setPrompt("Select most fitting description");
+        }
+    };
+
     const handleCardClick = (option: String, key: number) => {
         console.log("Testing click:", option);
         
@@ -56,13 +75,17 @@ const SelectionMenu = ({
                 flexWrap="wrap"
                 gap="30px"
             >
+                <Typography variant="h5" sx={{ fontWeight: "light" }}>
+                        {prompt}
+                </Typography>
+                
                 {/* we pass in the "key" prop which is actually the index of the array item */}
                 {options?.map((option, key) => (
                     <Box key={key}>
                         <Card
                         sx={{ 
-                            maxWidth: 300, 
-                            minWidth: 280, 
+                            maxWidth: 600, 
+                            minWidth: 300, 
                             border: "none", 
                             ":hover": { 
                                 boxShadow: 10, 
