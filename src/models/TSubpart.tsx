@@ -1,4 +1,4 @@
 export type TSubpart = {
-    name: string;
+    subPart: string;
     questions: string[];
 }

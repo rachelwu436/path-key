@@ -7,6 +7,7 @@ import {
     CardContent,
     CardActionArea,
     Typography,
+    Button,
 } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
@@ -26,6 +27,9 @@ const SelectionMenu = ({
     // when an answer is selected, we add it to the answers array in the quizContext
     const { answers, setAnswers } = useQuizContext();
 
+    // increment quiz progress when next button is clicked.
+    const { quizProgress, setQuizProgress } = useQuizContext();
+
     const handleCardClick = (option: String, key: number) => {
         console.log("Testing click:", option);
         
@@ -33,8 +37,14 @@ const SelectionMenu = ({
         console.log("Testing index of option selected:", key);
         setAnswers((answers) => [...answers, key]);
 
-        // answers are beibg saved. yay!
-        console.log(answers);
+        // answers are being saved. yay!
+        console.log("Answers index array:", answers);
+    };
+
+    // when next button is selected, we should increment quizProgress to show we are on to another stage.
+    const handleNextButton = () => {
+        setQuizProgress( quizProgress + 1 );
+        console.log("QuizProgress:", quizProgress);
     };
 
     return ( 
@@ -72,6 +82,12 @@ const SelectionMenu = ({
                     </Box>
                 ))}
             </Box>
+            {/* the next button will update the quizProgress */ }
+            <Button variant="contained" 
+                onClick={() => handleNextButton()} 
+                sx = {{ mt: 5 }}>
+                Next
+            </Button>
         </Box>
     );
 }

@@ -70,40 +70,25 @@ router.get('/crops', (req, res) => {
                         {
                             "subPart": "Seedlings",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Roots brown and mushy; dark, watery rot in stem/taproot near soil surface; leaves yellow; plants wilted, stunted or collapsed"
-                                }
+                                "Roots brown and mushy; dark, watery rot in stem/taproot near soil surface; leaves yellow; plants wilted, stunted or collapsed"
                             ]
                         },
                         {
                             "subPart": "Larger plants",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Dark brown lesions on roots, lesions may coalesce; in severely diseased plants, roots are reduced to stubs"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Taproot may be deformed; root system reduced; roots rotted or brown/dead; plant may be stunted; outer leaves yellow and wilted"
-                                },
-                                {
-                                    "questionId": 3,
-                                    "question": "Plant stunted, wilting or yellowing; roots have brown lesions; show pitting, cracking and/or rough surface; reduced root system"
-                                },
-                                {
-                                    "questionId": 4,
-                                    "question": "Plant collapsed or wilting; taproot pith rotting - greenish-to-black in colour and gelatinous in texture"
-                                }
+                                "Dark brown lesions on roots, lesions may coalesce; in severely diseased plants, roots are reduced to stubs",
+                                
+                                "Taproot may be deformed; root system reduced; roots rotted or brown/dead; plant may be stunted; outer leaves yellow and wilted",
+                                
+                                "Plant stunted, wilting or yellowing; roots have brown lesions; show pitting, cracking and/or rough surface; reduced root system",
+                                
+                                "Plant collapsed or wilting; taproot pith rotting - greenish-to-black in colour and gelatinous in texture",
                             ]
                         },
                         {
                             "subPart": "Nodules and swellings on roots",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Galls/knots (<6mm diam.) on roots; infected plants may be stunted and have pale green, or yellowish leaves"
-                                }
+                                "Galls/knots (<6mm diam.) on roots; infected plants may be stunted and have pale green, or yellowish leaves"
                             ]
                         }
                     ]
@@ -114,36 +99,23 @@ router.get('/crops', (req, res) => {
                         {
                             "subPart": "Seedlings",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Lesions or rotting in stem near soil surface; roots brown and mushy; leaves yellow; plants wilted, stunted, or collapsed"
-                                }
+                                "Lesions or rotting in stem near soil surface; roots brown and mushy; leaves yellow; plants wilted, stunted, or collapsed"
                             ]
                         },
                         {
                             "subPart": "Larger plants",
-                            "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Stem rot at soil-line (collar-rot); plant may be collapsed; white mycelium covers affected tissues; many small, brown, round sclerotia"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Grey or grey-brown, sunken lesions covered with grey mould"
-                                }
+                            "questions": [            
+                                "Stem rot at soil-line (collar-rot); plant may be collapsed; white mycelium covers affected tissues; many small, brown, round sclerotia",
+                                
+                                "Grey or grey-brown, sunken lesions covered with grey mould"
                             ]
                         },
                         {
                             "subPart": "Internal stem discolouration",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Rusty-brown discolouration in stem and taproot vascular tissues; plant wilting/yellowing/stunted/collapsed"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Greenish-brown discoloration in stem and taproot vascular tissues; plant wilting/yellowing/stunted (similar to Fusarium wilt)"
-                                }
+                                "Rusty-brown discolouration in stem and taproot vascular tissues; plant wilting/yellowing/stunted/collapsed",
+                                
+                                "Greenish-brown discoloration in stem and taproot vascular tissues; plant wilting/yellowing/stunted (similar to Fusarium wilt)"
                             ]
                         }
                     ]
@@ -159,40 +131,25 @@ router.get('/crops', (req, res) => {
                         {
                             "subPart": "Seedlings",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Roots brown and mushy; dark, watery rot in stem/taproot near soil surface; leaves yellow; plants wilted, stunted or collapsed"
-                                }
+                                "Roots brown and mushy; dark, watery rot in stem/taproot near soil surface; leaves yellow; plants wilted, stunted or collapsed"
                             ]
                         },
                         {
                             "subPart": "Larger plants",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Dark brown lesions on roots, lesions may coalesce; in severely diseased plants, roots are reduced to stubs"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Taproot may be deformed; root system reduced; roots rotted or brown/dead; plant may be stunted; outer leaves yellow and wilted"
-                                },
-                                {
-                                    "questionId": 3,
-                                    "question": "Plant stunted, wilting or yellowing; roots have brown lesions; show pitting, cracking and/or rough surface; reduced root system"
-                                },
-                                {
-                                    "questionId": 4,
-                                    "question": "Plant collapsed or wilting; taproot pith rotting - greenish-to-black in colour and gelatinous in texture"
-                                }
+                                "Dark brown lesions on roots, lesions may coalesce; in severely diseased plants, roots are reduced to stubs",
+                                
+                                "Taproot may be deformed; root system reduced; roots rotted or brown/dead; plant may be stunted; outer leaves yellow and wilted",
+                                
+                                "Plant stunted, wilting or yellowing; roots have brown lesions; show pitting, cracking and/or rough surface; reduced root system",
+                                
+                                "Plant collapsed or wilting; taproot pith rotting - greenish-to-black in colour and gelatinous in texture"
                             ]
                         },
                         {
                             "subPart": "Nodules and swellings on roots",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Galls/knots (<6mm diam.) on roots; infected plants may be stunted and have pale green, or yellowish leaves"
-                                }
+                                "Galls/knots (<6mm diam.) on roots; infected plants may be stunted and have pale green, or yellowish leaves"
                             ]
                         }
                     ]
@@ -203,36 +160,23 @@ router.get('/crops', (req, res) => {
                         {
                             "subPart": "Seedlings",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Lesions or rotting in stem near soil surface; roots brown and mushy; leaves yellow; plants wilted, stunted, or collapsed"
-                                }
+                                "Lesions or rotting in stem near soil surface; roots brown and mushy; leaves yellow; plants wilted, stunted, or collapsed"
                             ]
                         },
                         {
                             "subPart": "Larger plants",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Stem rot at soil-line (collar-rot); plant may be collapsed; white mycelium covers affected tissues; many small, brown, round sclerotia"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Grey or grey-brown, sunken lesions covered with grey mould"
-                                }
+                                "Stem rot at soil-line (collar-rot); plant may be collapsed; white mycelium covers affected tissues; many small, brown, round sclerotia",
+                                
+                                "Grey or grey-brown, sunken lesions covered with grey mould"
                             ]
                         },
                         {
                             "subPart": "Internal stem discolouration",
                             "questions": [
-                                {
-                                    "questionId": 1,
-                                    "question": "Rusty-brown discolouration in stem and taproot vascular tissues; plant wilting/yellowing/stunted/collapsed"
-                                },
-                                {
-                                    "questionId": 2,
-                                    "question": "Greenish-brown discoloration in stem and taproot vascular tissues; plant wilting/yellowing/stunted (similar to Fusarium wilt)"
-                                }
+                                "Rusty-brown discolouration in stem and taproot vascular tissues; plant wilting/yellowing/stunted/collapsed",
+                                
+                                "Greenish-brown discoloration in stem and taproot vascular tissues; plant wilting/yellowing/stunted (similar to Fusarium wilt)"
                             ]
                         }
                     ]
