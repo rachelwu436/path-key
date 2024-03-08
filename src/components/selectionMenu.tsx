@@ -39,13 +39,13 @@ const SelectionMenu = ({
 
     const togglePrompt = ( quizProgress: number ) => {
         if ( quizProgress == 1 ) {
-            setPrompt("Select plant part");
+            setPrompt("Select plant part:");
         }
         if ( quizProgress == 2 ) {
-            setPrompt("Select sub part");
+            setPrompt("Select sub part:");
         }
         if ( quizProgress == 3 ) {
-            setPrompt("Select most fitting description");
+            setPrompt("Select the most fitting description:");
         }
     };
 
@@ -84,7 +84,7 @@ const SelectionMenu = ({
                     <Box key={key}>
                         <Card
                         sx={{ 
-                            maxWidth: 600, 
+                            maxWidth: 800, 
                             minWidth: 300, 
                             border: "none", 
                             ":hover": { 

@@ -7,16 +7,26 @@ import {
 import { TCrop } from "../models/TCrop";
 import { useQuizContext} from "../contexts/quizContext";
 
+import { useNavigate } from "react-router-dom";
+
 // the questioanire will keep track of the quiz progress and decide what to pass to the selectionMenu each time.
 const Questionaire = () => {
+
+    const navigate = useNavigate();
 
     const { currentCrop, setCurrentCrop } = useQuizContext();
     const { quizProgress, setQuizProgress } = useQuizContext();
     const { answers, setAnswers } = useQuizContext();
+    
 
     useEffect(() => {
         manageCurrentOptions(currentCrop, quizProgress);
     }, [currentCrop, quizProgress]);
+
+    // function to change from homepage to questionpage to start the questionaire
+    const goResultsPage = () => {
+        navigate("/ResultPage");
+    };
 
     // we will need to manage the options getting passed into the SelectionMenu.
     // current options will change depending on quiz stage.
@@ -48,7 +58,6 @@ const Questionaire = () => {
             
             // now we need to pass the subPartOptions to the currentOptions so that it can be passed to the selectionMenu.
             setCurrentOptions(subPartOptions);
-        
         };
         
         // if quizProgress is 3, then we grab the questions from the subPart index selected in the previous section.
@@ -65,7 +74,11 @@ const Questionaire = () => {
 
             // now we need to pass the questionOptions to the currentOptions so that it can be passed to the selectionMenu.
             setCurrentOptions(questionOptions);
-            
+        };
+
+        // if the quizProgress is 4, it means the quiz has ended and can now display the results page.
+        if (quizProgress == 4) {
+            goResultsPage();
         };
     };
 
