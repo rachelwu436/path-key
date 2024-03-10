@@ -3,5 +3,7 @@ export type TDisease = {
     name: String;
     altName: String;
     description: String,
-    fixes: String[],
+    controls: String[],
+    recommendation: String,
+    treatments: String[]
 };

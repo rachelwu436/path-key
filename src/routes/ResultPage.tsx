@@ -24,9 +24,15 @@ function ResultPage() {
     const navigate = useNavigate();
     
    // function to change from homepage to questionpage to start the questionaire
-   const goHomePage = () => {
-    navigate("/");
-};
+    const goHomePage = () => {
+        navigate("/");
+    };
+
+    // we need a function to go to the "fixes page"
+    // once we get the disease, we should save it to the quizContext so we can access it in the "controls" page.
+    const goFixesPage = () => {
+        navigate("/FixesPage");
+    };
 
     // setup what the ResultPage will look like
     return (
@@ -56,6 +62,12 @@ function ResultPage() {
                     <HomeIcon/>
                 </Button>
 
+                {/* Button to go to fixes page */}    
+                <Button variant="contained" 
+                    onClick={goFixesPage} 
+                    sx = {{ ml: 7, mt: 2 }}>
+                    View controls
+                </Button>
             </Container>
         </Box>
     )

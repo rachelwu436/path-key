@@ -6,7 +6,8 @@ import {
     CardActionArea,
     Typography,
     Grid,
-    } 
+    Button,
+} 
 from "@mui/material";
 
 import { useNavigate, Link } from "react-router-dom";
@@ -16,15 +17,20 @@ import { TCrop } from "../models/TCrop";
 import { TDisease } from "../models/TDisease";
 import { useQuizContext } from "../contexts/quizContext";
 
+
 import axios from "axios";
 
 const ResultsDisplay = () => {
-  
+    
+    const navigate = useNavigate();
+
     // grab the answer indexes that we have been tracking from the quizContext.
     const { answers, setAnswers } = useQuizContext();
     const { currentCrop, setCurrentCrop } = useQuizContext();
     
-    const [ diseaseId, setDiseaseId ] = useState("0");
+    const { identifiedDisease, setIdentifiedDisease } = useQuizContext();
+    
+    const [ diseaseId, setDiseaseId ] = useState("1");
     const [ disease, setDisease ] = useState<TDisease>();
 
     // we need to identify the diseaseID to grab the associated disease from the server.
@@ -33,8 +39,22 @@ const ResultsDisplay = () => {
 
         // from the diseaseId, we grab the identified disease.
         axiosGetDisease(diseaseId);
-    
-    }, [answers, diseaseId])
+
+        // we set the identified disease in the context so that it can be used in the "fixes" page.
+        const disease = identifiedDisease;
+
+        // BUG //
+        // i know there's an issue here where the disease is being set as "1" because the useEffect is being run twice.
+        setDiseaseInContext(disease);
+
+    }, [answers, diseaseId]);
+
+    // function to set disease in context.
+    const setDiseaseInContext = (disease: TDisease) => {
+        setIdentifiedDisease(disease);
+
+        console.log(disease.name);
+    };
 
     // grab the identified disease from the server using the diseaseId.
     // we call the getDiseaseById API.
