@@ -43,7 +43,7 @@ function FixesPage() {
                     {identifiedDisease ? (   
                         <Box>
                             <Typography>
-                                {identifiedDisease.name}
+                                {identifiedDisease.recommendation}
                             </Typography>
                         </Box>
 

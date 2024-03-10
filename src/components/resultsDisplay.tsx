@@ -31,29 +31,26 @@ const ResultsDisplay = () => {
     const { identifiedDisease, setIdentifiedDisease } = useQuizContext();
     
     const [ diseaseId, setDiseaseId ] = useState("1");
-    const [ disease, setDisease ] = useState<TDisease>();
+    // const [ disease, setDisease ] = useState<TDisease>();
 
     // we need to identify the diseaseID to grab the associated disease from the server.
     useEffect(() => {
         identifyLettuceDisease(currentCrop, answers);
 
         // from the diseaseId, we grab the identified disease.
-        axiosGetDisease(diseaseId);
-
-        // we set the identified disease in the context so that it can be used in the "fixes" page.
-        const disease = identifiedDisease;
-
         // BUG //
         // i know there's an issue here where the disease is being set as "1" because the useEffect is being run twice.
-        setDiseaseInContext(disease);
-
+        axiosGetDisease(diseaseId);
+        
     }, [answers, diseaseId]);
 
     // function to set disease in context.
     const setDiseaseInContext = (disease: TDisease) => {
-        setIdentifiedDisease(disease);
-
-        console.log(disease.name);
+        // check if we have returned a valid disease:
+        if (typeof disease !== "undefined") {
+            setIdentifiedDisease(disease);
+            console.log(disease.name);
+        };
     };
 
     // grab the identified disease from the server using the diseaseId.
@@ -62,7 +59,7 @@ const ResultsDisplay = () => {
         try {
             console.log(diseaseId);
             const response = await axios.get(`http://localhost:4000/diseaseData/${diseaseId}`);
-            setDisease(response.data);
+            setIdentifiedDisease(response.data);
         }
         catch (error) {
             console.log("Error fetching item", error);
@@ -163,23 +160,25 @@ const ResultsDisplay = () => {
 
                 {/* We can only show the disease if we have grabbed it, otherwise we display error message */}
                 <Box>
-                    {disease ? (   
+                    {identifiedDisease ? (   
                         <Box>
                             <Grid container direction="row" spacing={2}>
                                 <Grid item style={{ display: "flex" }}>
                                     <Typography variant="h5" sx={{ fontWeight: "medium" }}> 
-                                        {disease.name} 
+                                        {identifiedDisease.name} 
                                     </Typography>
                                 </Grid>
                                 <Grid item style={{ display: "flex" }}>
                                     <Typography>
-                                        Latin name: {disease.altName}
+                                        Latin name: {identifiedDisease.altName}
                                     </Typography>
                                 </Grid>
                             </Grid>
                             <Typography paragraph variant="body1" sx={{ mt: 5 }}>
-                                {disease.description}
+                                {identifiedDisease.description}
                             </Typography>
+
+                            
 
                         </Box>
 
