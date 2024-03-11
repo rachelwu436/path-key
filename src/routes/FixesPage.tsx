@@ -9,6 +9,8 @@ import {
     Container,
     Grid,
     List,
+    ListItem,
+    ListItemText
 } from "@mui/material";
 
 import { TDisease } from "../models/TDisease";
@@ -36,22 +38,31 @@ function FixesPage() {
                 />
 
                 <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 10, fontWeight: "light" }}>
-                    Controls
+                    Disease control
                 </Typography>
                 
-                <Box>
-                    {identifiedDisease ? (   
-                        <Box>
-                            <Typography>
-                                {identifiedDisease.recommendation}
-                            </Typography>
-                        </Box>
+                <Box sx={{ ml: 7, mr: 7}}>
 
-                    ) : (
-                        <Typography>
-                            Error: disease not found.
-                        </Typography>
-                    )}
+                    {/* will need to list controls here */}
+                    <ul>
+                        {identifiedDisease.controls.map((control, key) => (
+                            <li key={key}>
+                                {control}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <Typography sx={{ mt: 5 }}>
+                        {identifiedDisease.recommendation}
+                    </Typography>
+
+                    <ul>
+                        {identifiedDisease.treatments.map((treatment, key) => (
+                            <li key={key}>
+                                {treatment}
+                            </li>
+                        ))}
+                    </ul>
                 </Box>
 
             </Container>

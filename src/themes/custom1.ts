@@ -31,9 +31,7 @@ const theme = createTheme({
             fontWeight: "light",
 
         }
-
     }
-    
 });
 
 export default theme;

@@ -44,9 +44,11 @@ function QuestionPage() {
                 src="/src/assets/pathkey_background_decor.png"
                 />
 
-                <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 5, fontWeight: "light" }}>
-                    {currentCrop.name}
-                </Typography>
+                <Box sx={{ mb: 8 }}>
+                    <Typography display="inline" color="primary" variant="h3" sx={{ pl: 10, fontWeight: "light" }}>
+                        {currentCrop.name}
+                    </Typography>
+                </Box>
                     
                 <Questionaire />
             </Container>

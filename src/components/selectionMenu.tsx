@@ -39,10 +39,10 @@ const SelectionMenu = ({
 
     const togglePrompt = ( quizProgress: number ) => {
         if ( quizProgress == 1 ) {
-            setPrompt("Select plant part:");
+            setPrompt("What part of the plant are you seeing symptoms?");
         }
         if ( quizProgress == 2 ) {
-            setPrompt("Select sub part:");
+            setPrompt("What is the plant's growth stage?");
         }
         if ( quizProgress == 3 ) {
             setPrompt("Select the most fitting description:");
@@ -68,16 +68,17 @@ const SelectionMenu = ({
 
     return ( 
         <Box flex={1} sx={{ m: 5, pl: 5}}>
+            <Typography variant="h5" sx={{ fontWeight: "light", mb: 5 }}>
+                {prompt}
+            </Typography>
+            
             <Box 
                 display="grid"
                 gridTemplateColumns="repeat(auto-fill, 320px)"
                 flexDirection="column"
-                flexWrap="wrap"
                 gap="30px"
             >
-                <Typography variant="h5" sx={{ fontWeight: "light" }}>
-                        {prompt}
-                </Typography>
+                
                 
                 {/* we pass in the "key" prop which is actually the index of the array item */}
                 {options?.map((option, key) => (

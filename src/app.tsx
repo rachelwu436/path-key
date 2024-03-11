@@ -1,16 +1,10 @@
-import React, {
-  useState,
-  useEffect,
-  createContext,
-  SetStateAction,
-} from 'react';
+import React, {} from 'react';
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom"; 
  
 // import mui components
 import { 
-  Box, 
-  Typography,     
+  Box,     
   CssBaseline, 
 } from "@mui/material";
 
@@ -23,8 +17,6 @@ import Homepage from "./routes/Homepage";
 import QuestionPage from "./routes/QuestionPage";
 import ResultPage from "./routes/ResultPage";
 import FixesPage from "./routes/FixesPage";
-
-import './App.css';
 
 // import global state manager
 import { QuizProvider } from "./contexts/quizContext";
