@@ -48,26 +48,22 @@ function ResultPage() {
                 src="/src/assets/pathkey_background_decor.png"
                 />
 
-                <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 5, fontWeight: "regular" }}>
-                    Results
-                </Typography>
+                <Box>
+                    <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 5, fontWeight: "regular" }}>
+                        Results
+                    </Typography>
 
-                {/* We want to display the disease identified from the quiz */}    
-                <ResultsDisplay />
-                
-                {/* Button to return to the HomePage */}    
-                <Button variant="contained" 
-                    onClick={goHomePage} 
-                    sx = {{ ml: 10, mt: 2 }}>
-                    <HomeIcon/>
-                </Button>
+                    {/* We want to display the disease identified from the quiz */}    
+                    <ResultsDisplay />
+                    
 
-                {/* Button to go to fixes page */}    
-                <Button variant="contained" 
-                    onClick={goFixesPage} 
-                    sx = {{ ml: 7, mt: 2 }}>
-                    View controls
-                </Button>
+                    {/* Button to go to fixes page */}    
+                    <Button variant="contained" 
+                        onClick={goFixesPage} 
+                        sx = {{ ml: 10, mt: 1 }}>
+                        View controls
+                    </Button>
+                </Box>
             </Container>
         </Box>
     )

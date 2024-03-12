@@ -10,16 +10,25 @@ import {
     Grid,
     List,
     ListItem,
-    ListItemText
+    ListItemText,
+    Button
 } from "@mui/material";
 
 import { TDisease } from "../models/TDisease";
 
 import { useQuizContext} from "../contexts/quizContext";
 
+import HomeIcon from "@mui/icons-material/Home";
+import { Home } from "@mui/icons-material";
+
 function FixesPage() {
     
     const navigate = useNavigate(); 
+
+    // function to change from homepage to questionpage to start the questionaire
+    const goHomePage = () => {
+        navigate("/");
+    };
    
     // get the identified disease from the quizContext so we can display controls.
     const { identifiedDisease, setIdentifiedDisease } = useQuizContext();
@@ -37,7 +46,7 @@ function FixesPage() {
                 src="/src/assets/pathkey_background_decor.png"
                 />
 
-                <Typography color="primary" variant="h3" sx={{ pl: 10, pb: 10, fontWeight: "light" }}>
+                <Typography color="primary" variant="h3" sx={{ ml: 10, pb: 5, fontWeight: "light" }}>
                     Disease control
                 </Typography>
                 
@@ -50,9 +59,11 @@ function FixesPage() {
                                 {control}
                             </li>
                         ))}
+
+
                     </ul>
 
-                    <Typography sx={{ mt: 5 }}>
+                    <Typography sx={{ mt: 5, pl: 2 }}>
                         {identifiedDisease.recommendation}
                     </Typography>
 
@@ -63,7 +74,15 @@ function FixesPage() {
                             </li>
                         ))}
                     </ul>
+                
                 </Box>
+
+                {/* Button to return to the HomePage */}    
+                <Button variant="contained" 
+                    onClick={goHomePage} 
+                    sx = {{ ml: 10, mt: 5 }}>
+                    <HomeIcon/>
+                </Button>
 
             </Container>
         </Box>
