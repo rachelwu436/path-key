@@ -84,6 +84,9 @@ const ResultsDisplay = () => {
         };
 
         // check if we are dealing with leaves....
+        if (crop.name == "Lettuce" && answerIndexes[0] == 2) {
+            identifyLeafDisease(answerIndexes);
+        };
 
     };
 
@@ -143,7 +146,97 @@ const ResultsDisplay = () => {
     };
 
     // function to identify leaf diseases associated with lettuce.......
+    const identifyLeafDisease = (answerIndexes: number[]) => {
+        // identify the diseases associated with "shrivelled and dead leaf margins".
+        if (answerIndexes[1] == 0) {
+            if (answerIndexes[2] == 0) {
+                setDiseaseId("0");
+            };
+            if (answerIndexes[2] == 1) {
+                setDiseaseId("0");
+            };
+            if (answerIndexes[2] == 2) {
+                setDiseaseId("0");
+            };
+        };
+        
+        // identify the diseases associated with "Leaf spots".
+        if (answerIndexes[1] == 1) {
+            if (answerIndexes[2] == 0) {
+                setDiseaseId("1");
+            };
+            if (answerIndexes[2] == 1) {
+                setDiseaseId("3");
+            };
+            if (answerIndexes[2] == 2) {
+                setDiseaseId("4");
+            };
+            if (answerIndexes[2] == 3) {
+                setDiseaseId("12");
+            };
+            if (answerIndexes[2] == 4) {
+                setDiseaseId("14");
+            };
+            if (answerIndexes[2] == 5) {
+                setDiseaseId("16");
+            };
+            if (answerIndexes[2] == 6) {
+                setDiseaseId("18");
+            };
+            if (answerIndexes[2] == 7) {
+                setDiseaseId("20");
+            };
+        };
 
+        // identify the diseases associated with "leaf blotches and blights".
+        if (answerIndexes[1] == 2) {
+            if (answerIndexes[2] == 0) {
+                setDiseaseId("6");
+            };
+            if (answerIndexes[2] == 1) {
+                setDiseaseId("9");
+            };
+            if (answerIndexes[2] == 2) {
+                setDiseaseId("7");
+            };
+            if (answerIndexes[2] == 3) {
+                setDiseaseId("15");
+            };
+            if (answerIndexes[2] == 4) {
+                setDiseaseId("19");
+            };
+            if (answerIndexes[2] == 5) {
+                setDiseaseId("21");
+            };
+        };
+
+        // identify the diseases associated with "leaves deformed or mottled".
+        if (answerIndexes[1] == 3) {
+            if (answerIndexes[2] == 0) {
+                setDiseaseId("22");
+            };
+            if (answerIndexes[2] == 1) {
+                setDiseaseId("23");
+            };
+            if (answerIndexes[2] == 2) {
+                setDiseaseId("25");
+            };
+            if (answerIndexes[2] == 3) {
+                setDiseaseId("26");
+            };
+            if (answerIndexes[2] == 4) {
+                setDiseaseId("27");
+            };
+            if (answerIndexes[2] == 5) {
+                setDiseaseId("0");
+            };
+        };
+
+        // identify the diseases associated with "superficial fungus coatings".
+        if (answerIndexes[1] == 3) {
+            setDiseaseId("9");
+        };
+    };
 
     return ( 
         <Box flex={1} sx={{ m: 5, pl: 5}}>

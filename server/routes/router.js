@@ -160,11 +160,8 @@ router.get('/crops', (req, res) => {
                             "subPart": "Larger plants",
                             "questions": [
                                 "Dark brown lesions on roots, lesions may coalesce; in severely diseased plants, roots are reduced to stubs",
-                                
                                 "Taproot may be deformed; root system reduced; roots rotted or brown/dead; plant may be stunted; outer leaves yellow and wilted",
-                                
                                 "Plant stunted, wilting or yellowing; roots have brown lesions; show pitting, cracking and/or rough surface; reduced root system",
-                                
                                 "Plant collapsed or wilting; taproot pith rotting - greenish-to-black in colour and gelatinous in texture",
                             ]
                         },
@@ -189,7 +186,6 @@ router.get('/crops', (req, res) => {
                             "subPart": "Larger plants",
                             "questions": [            
                                 "Stem rot at soil-line (collar-rot); plant may be collapsed; white mycelium covers affected tissues; many small, brown, round sclerotia",
-                                
                                 "Grey or grey-brown, sunken lesions covered with grey mould"
                             ]
                         },
@@ -197,8 +193,61 @@ router.get('/crops', (req, res) => {
                             "subPart": "Internal stem discolouration",
                             "questions": [
                                 "Rusty-brown discolouration in stem and taproot vascular tissues; plant wilting/yellowing/stunted/collapsed",
-                                
                                 "Greenish-brown discoloration in stem and taproot vascular tissues; plant wilting/yellowing/stunted (similar to Fusarium wilt)"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part": "Leaves",
+                    "subParts": [
+                        {
+                            "subPart": "Shrivelled and dead leaf margins - with no fungal structures visible",
+                            "questions": [
+                                "Yellowish translucent areas near leaf margins which form an irregular brown border",
+                                "Leaves arched, margins dry; heads loose and unmarketable",
+                                "Leaves die from the edge inwards; leaf blades may be blue-green and stiff"
+                            ]
+                        },
+                        {
+                            "subPart": "Leaf spots",
+                            "questions": [            
+                                "Small watersoaked, light-brown spots on the outer leaves (often midrib); centers of older spots fell out - 'shot-hole' appearance",
+                                "Rust-brown spots on lower leaf midrib - may enlarge and rot infected tissues; brown mycelium and black sclerotia on infected tissues",
+                                "Brown spots with pale green halo; older spots larger, brown and bounded by leaf veins; white spots often in centre of lesions",
+                                "Yellow or brown spots dotted with tiny pycnidia (use hand lens); the spots enlarge and dry out; spot centres may fall out",
+                                "Round, light brown spots on older leaves; concentric bands in lesion ('target spot'); dead tissue in spot centre - often drops out",
+                                "Transluscent water-soaked spots on outer leaves; older spots dark brown/black with greasy appearance - later dry and papery",
+                                "Reddish-brown spots; older spots brown-black, dry and papery; leaf margins wilted; vascular bundles of wilting leaves brown-black",
+                                "Small, shiny, dark brown to black spots that may coalesce into shiny brown discolouration along the midrib of the inner leaves"
+                            ]
+                        },
+                        {
+                            "subPart": "Leaf blotches and blights",
+                            "questions": [
+                                "Yellowish or brownish, angular blotches with a downy, whitish mildew on the lower surface underneath the brown blotches",
+                                "Lower leaves on the soil have a soft, mushy, brown or grey rot; fluffy, light grey growth and small black sclerotia visible in infected tissues",
+                                "Leaves in contact with the soil have soft, brown or grey rot; cottony, white mycelium and small black sclerotia visible in infected tissues",
+                                "Necrotic lesions starting at leaf margin; lower leaves wilting/yellowing/dying; tiny black microsclerotia may be seen on outer leaf veins",
+                                "Dark, water-soaked areas on the outer leaves; forming large brown slimy areas; may progress to inner leaves and stem",
+                                "Yellow leaf veins; older leaves thickened and almost completely yellow except for green areas close to the veins"
+                            ]
+                        },
+                        {
+                            "subPart": "Leaves deformed or mottled",
+                            "questions": [
+                                "Yellowing/twisting/deformation/downward curling of outer leaves; light-green or yellow mottling of actively growing plant leaves",
+                                "Varying degrees of leaf discolouration, chlorotic mottling, interveinal necrosis, and deformation; infected plants are stunted",
+                                "Leaves dull green-yellow; often twisted/malformed; yellow mottle on older leaves; outer leaves often wilted, bronzed. necrotic",
+                                "Infected plants have characteristic enlarged, clear leaf veins; ruffled or puckered leaves, malformed heads, and stunted growth",
+                                "Leaves yellow/wilted; distorted central leaves; brown russetting and spotting of leaves; midrib may have sunken necrotic spots",
+                                "Leaves stiff and erect"
+                            ]
+                        },
+                        {
+                            "subPart": "Superficial fungus coatings",
+                            "questions": [
+                                "White powdery coating on older, lower leaves; affected tissues often chlorotic with irregular brown lesions",
                             ]
                         }
                     ]
