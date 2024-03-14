@@ -233,8 +233,8 @@ const ResultsDisplay = () => {
         };
 
         // identify the diseases associated with "superficial fungus coatings".
-        if (answerIndexes[1] == 3) {
-            setDiseaseId("9");
+        if (answerIndexes[1] == 4) {
+            setDiseaseId("10");
         };
     };
 
